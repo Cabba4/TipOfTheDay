@@ -1,0 +1,16 @@
+######################################
+Topic SSH
+
+The Secure Shell Protocol is a cryptographic network protocol for operating network services securely over an unsecured network. Its most notable applications are remote login and command-line execution. SSH applications are based on a client–server architecture.
+
+# How to login using ssh 
+
+# usage: ssh [-i identity_file] [-J [user@]host[:port]] [-p port] destination [command]
+# The identity file can be used on devices where ssh is used more frequently, with an identity file you dont have to input the password as the server already trusts the user device on basis of it.
+
+The command mostly looks like this 
+
+ssh username@host
+
+######################################
+

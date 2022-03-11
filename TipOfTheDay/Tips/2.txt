@@ -1,0 +1,22 @@
+######################################
+Topic SCP
+
+# The SCP command, part of the SSH installation, provides remote file transfers via secure channel. It has virtually replaced the ftp command due to security reasons.  
+
+# FTP allowed anonymous logins if not configured correctly so scp replaced it. 
+
+SCP command can be used to send files from local to server and from server to local. Its a two way street.
+
+The command usually looks like this
+
+# Getting file from server to local 
+
+scp username@host:/path/to/file/on/server /path/on/local/where/you/want/it
+
+# Similarly in the opposite way it looks like
+
+scp /path/to/local/file username@host:/path/to/save/location  
+
+# You can also specify -r tag when downloading from server to local although not needed
+######################################
+

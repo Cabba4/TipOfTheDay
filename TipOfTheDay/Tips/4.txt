@@ -1,0 +1,17 @@
+######################################
+Topic Subshell
+
+# In linux terminal whatever we type is assumed and treated as a command input but often we want to use the output of one command as input for another ie in scripts or loops, here subshell is very handy
+
+# A subshell runs along with the main command and just produces its output in stdout 
+
+# To make a subshell we have to use special syntax 
+
+user@Desktop:/home/user/$ echo "Date is $(date)"
+Date is Thu Mar 10 23:54:33 EET 2022
+
+# Everything inside the $() bracket runs in the subshell and its output goes as stdin in the echo command
+
+# This is very useful while making small shell scripts where some env information or small changes have to be made.
+######################################
+

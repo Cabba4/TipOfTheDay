@@ -1,0 +1,25 @@
+######################################
+Topic Job control  
+
+# In linux processes can either run in foreground or the background. If a command is run interactively and it shows the result quickly its natural to run it in the foreground but if it takes a lot of time we can send it to background and keep working in the terminal 
+
+# To start a normal process 
+
+command 
+
+# Then this command executes and ends, To background the same command 
+
+command & 
+
+# To list all current processes/jobs we use the command jobs
+
+jobs 
+[1]+  Running                 sleep 1000 &
+# To bring this command back to foreground we can type
+
+fg 1 
+# where 1 is the pid 
+
+# We can list all processes using the ps command and use kill command to terminate processes
+######################################
+
