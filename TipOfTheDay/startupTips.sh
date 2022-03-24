@@ -2,13 +2,20 @@
 
 # Script to show tips on each login/new terminal open
 
-# DATE=$(date -I)
-
 # Read current tip
-#cat 1 > .curtip
 
+HOMEDIR=/opt/totd/TipOfTheDay
 
-HOMEDIR=$HOME/scripts
+_isTrue()
+{
+	STATUS=$(<$HOME/.TOTD)
+	if [ $STATUS == '1' ]; then
+		echo "Already Disabled!"
+		exit 0
+	else
+		echo "1" > $HOME/.TOTD
+	fi
+}
 
 _showTip()
 {
@@ -38,14 +45,32 @@ _showTip()
 }
 
 
-_main()
+_run()
 {
 	_showTip
-	echo "Show another Tip? Y/N "
+	echo "Show another Tip? Y/N  Or Disable Totd type 'disable'"
 	read input
 	if [[ $input == 'Y' || $input == 'y' ]]; 
 	then _main
+	elif [ $input == 'disable' ]; then
+	_isTrue
+	else
+	echo "Have a great day ahead!"	
 	fi	
+}
+
+_main()
+{
+	clear
+	if [ ! -f "$HOME/.TOTD" ]; then
+		echo "0" > $HOME/.TOTD
+	fi
+	STATUS=$(<$HOME/.TOTD)
+	if [ $STATUS == '0' ]; then
+		_run
+	else
+		exit 0
+	fi
 }
 
 _main
